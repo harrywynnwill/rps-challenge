@@ -1,13 +1,15 @@
-<link type='text/css' rel='stylesheet' href='sylesheet.css'>
+<link type='text/css' rel='stylesheet' href='/stylesheet.css'/>
 <center>
 <p> <%= @game.player.name %> vs. Computer </p>
-<p> <%= @game.player.name %> chooses <%= @game.player_choice %> <p>
-<p>computer chooses <%= @game.computer.computer_choice%> </p>
-
+<%= @game.player.name %> chooses <%= @game.player_choice %> <br/>
+<br/>
+  Computer chooses <%= @game.computer.computer_choice%>
+<div id="winner">
 <p> <%= @game.winner %> </p>
-
+</div>
 <form action="/play-again" method="post">
 <button> play again? </button>
 </form>
-
+score <%= @game.player.score %>
 </center>
+

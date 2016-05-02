@@ -28,6 +28,8 @@ attr_reader :player_choice
     paper(computer.computer_choice) if @player_choice == 'paper'
   end
 
+
+
   private
 
   def rock(choice)
@@ -48,13 +50,22 @@ attr_reader :player_choice
     tie if choice == "paper"
   end
   def player_wins
-     @winner = "#{@player.name} wins"
+     @winner = "#{@player.name} wins!!"
+     score_added
   end
   def computer_wins
-    @winner = "computer wins"
+    @winner = "The Computer wins!"
+    score_minus
   end
 
   def tie
     @winner = "game is a tie"
   end
+  def score_added
+    @game = player.add_score
+  end
+  def score_minus
+    @game = player.minus_score
+  end
+
 end
